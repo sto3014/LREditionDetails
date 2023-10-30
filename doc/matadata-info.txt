@@ -1,0 +1,16 @@
+https://wp.radiertechniken.de/anhang/auflage-und-nummerierung/auflage/
+
+LR Catalog Name 	readOnly
+LR Catalog Number	readOnly
+Catalog Name
+Catalog Number
+
+Copy	Exemplar
+Edition	Auflage 
+
+Mark 	Markierung 			enum
+	E.H.
+	H.C.
+	A.P.
+	P.P.
+	<leer>
