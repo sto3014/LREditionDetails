@@ -25,8 +25,8 @@ for f in *.lua
 do
  luac5.1 -o $f $f
 done
-cd $RESOURCE_DIR
-#cp -R * "$TARGET_DIR_MAC"
+# cd $RESOURCE_DIR
+# cp -R * "$TARGET_DIR_MAC"
 cd "$SCRIPT_DIR/target/mac"
 zip -q -r ../$PACKAGE_NAME$VERSION"_mac.zip" Library
 
@@ -46,8 +46,8 @@ for f in *.lua
 do
  luac5.1 -o $f $f
 done
-cd $RESOURCE_DIR
-cp -R * "$TARGET_DIR_WIN"
+# cd $RESOURCE_DIR
+# cp -R * "$TARGET_DIR_WIN"
 cd $SCRIPT_DIR/target/win
 zip -q -r ../$PACKAGE_NAME$VERSION"_win.zip" AppData
 

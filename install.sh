@@ -5,5 +5,5 @@ export VERSION=1.0.0.0
 
 cd $SCRIPT_DIR/target
 echo Extract files to ~:
-unzip -o LRDavinci$VERSION"_mac.zip" -d ~
+unzip -o LRPrintEdition$VERSION"_mac.zip" -d ~
 echo done

@@ -1,6 +1,6 @@
 return{
 
-	title = LOC "$$$/LRDavinci/Metadata/Tagset/Title=Custom Metadata",
+	title = LOC "$$$/LRPrintEdition/Metadata/Tagset/Title=Print Edition",
 	id = 'LRPrintEditionTagset',
 	
 	items = {

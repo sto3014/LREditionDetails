@@ -11,46 +11,46 @@ local PrintEditionMetadataDefinition = {
         },
 
         {
-            id = 'at.homebrew.lrprintedition.lrcatalogname',
-            title = LOC "$$$/LRPrintEdition/Metadata/Fields/Display/LRCatalogName=LR Catalog Name",
+            id = 'lrcatalogname',
+            title = LOC "$$$/LRPrintEdition/Metadata/Fields/Display/LRCatalogName=Lightroom Catalog",
             dataType = 'string',
             browsable = true,
             searchable = true,
             readOnly = true,
         },
         {
-            id = 'at.homebrew.lrprintedition.lrphotoid',
-            title = LOC "$$$/LRPrintEdition/Metadata/Fields/Display/LRPhotoID=LR Photo ID",
+            id = 'lrphotoid',
+            title = LOC "$$$/LRPrintEdition/Metadata/Fields/Display/LRPhotoID=Photo ID",
             dataType = 'string',
             browsable = true,
             searchable = true,
             readOnly = true,
         },
         {
-            id = 'at.homebrew.lrprintedition.excatalogname',
-            title = LOC "$$$/LRPrintEdition/Metadata/Fields/Display/ExCatalogName=Catalog Name",
+            id = 'excatalogname',
+            title = LOC "$$$/LRPrintEdition/Metadata/Fields/Display/ExCatalogName=External Catalog",
             dataType = 'string',
             browsable = true,
             searchable = true,
         },
         {
-            id = 'at.homebrew.lrprintedition.copy',
+            id = 'copy',
             title = LOC "$$$/LRPrintEdition/Metadata/Fields/Display/Copy=Copy",
             dataType = 'string',
             browsable = true,
             searchable = true,
         },
         {
-            id = 'at.homebrew.lrprintedition.edition',
+            id = 'edition',
             title = LOC "$$$/LRPrintEdition/Metadata/Fields/Display/Edition=Edition",
             dataType = 'string',
             browsable = true,
             searchable = true,
         },
         {
-            id = 'at.homebrew.lrprintedition.mark',
+            id = 'mark',
             title = LOC "$$$/LRPrintEdition/Metadata/Fields/Display/Mark=Mark",
-            dataType = 'string',
+            dataType = 'enum',
             browsable = true,
             searchable = true,
             values = {
@@ -77,7 +77,7 @@ local PrintEditionMetadataDefinition = {
             },
         },
         {
-            id = 'at.homebrew.lrprintedition.comment',
+            id = 'comment',
             title = LOC "$$$/LRPrintEdition/Metadata/Fields/Display/Comment=Comment",
             dataType = 'string',
             browsable = true,
@@ -91,6 +91,7 @@ local PrintEditionMetadataDefinition = {
     updateFromEarlierSchemaVersion = function(catalog, previousSchemaVersion)
         -- Note: This function is called from within a catalog:withPrivateWriteAccessDo
         -- block. You should not call any of the with___Do functions yourself.
+        logger.trace("start updateFromEarlierSchemaVersion")
 
         catalog:assertHasPrivateWriteAccess("PrintEditionMetadataDefinition.updateFromEarlierSchemaVersion")
 
@@ -109,6 +110,8 @@ local PrintEditionMetadataDefinition = {
 
             -- Optional area to do further processing etc.
         end
+        logger.trace("end updateFromEarlierSchemaVersion")
+
     end,
 
 }

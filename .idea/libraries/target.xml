@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="target">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/LRPrintEdition1.0.0.0_win.zip!/" />
+      <root url="jar://$PROJECT_DIR$/target/LRPrintEdition1.0.0.0_mac.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
