@@ -11,24 +11,15 @@ local PrintEditionMetadataDefinition = {
         },
 
         {
-            id = 'lrcatalogname',
-            title = LOC "$$$/LRPrintEdition/Metadata/Fields/Display/LRCatalogName=Lightroom Catalog",
+            id = 'catalogname',
+            title = LOC "$$$/LRPrintEdition/Metadata/Fields/Display/CatalogName=Catalog",
             dataType = 'string',
             browsable = true,
             searchable = true,
-            readOnly = true,
         },
         {
-            id = 'lrphotoid',
-            title = LOC "$$$/LRPrintEdition/Metadata/Fields/Display/LRPhotoID=Photo ID",
-            dataType = 'string',
-            browsable = true,
-            searchable = true,
-            readOnly = true,
-        },
-        {
-            id = 'excatalogname',
-            title = LOC "$$$/LRPrintEdition/Metadata/Fields/Display/ExCatalogName=External Catalog",
+            id = 'lotno',
+            title = LOC "$$$/LRPrintEdition/Metadata/Fields/Display/LotNo=Lot",
             dataType = 'string',
             browsable = true,
             searchable = true,

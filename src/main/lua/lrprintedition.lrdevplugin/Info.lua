@@ -16,7 +16,12 @@ return {
 	LrLibraryMenuItems = {
 		{
 			title = LOC "$$$/LRPrintEdition/Menu/Library/SetLRPhotoID=Set LR Photo ID",
-			file = "SetLRPhotoID.lua",
+			file = "SetPhotoSource.lua",
+			enabledWhen = "photosSelected",
+		},
+		{
+			title = LOC "$$$/LRPrintEdition/Menu/Library/SetLRPCatalogName=Set Catalog Name",
+			file = "SetPhotoCatalog.lua",
 			enabledWhen = "photosSelected",
 		},
 	},

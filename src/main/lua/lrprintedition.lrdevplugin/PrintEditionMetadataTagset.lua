@@ -16,7 +16,10 @@ return{
 		'com.adobe.separator',
 
 		{ "com.adobe.copyrightState", pruneRedundantFields = false },
+
 		"com.adobe.copyright",
+
+		"com.adobe.source",
 
 		'com.adobe.separator',
 		{
@@ -24,11 +27,9 @@ return{
 			label = LOC "$$$/LRPrintEdition/Metadata/Tagset/Title=Print Edition",
 		},
 
-		'at.homebrew.lrprintedition.lrcatalogname',
+		'at.homebrew.lrprintedition.catalogname',
 
-		'at.homebrew.lrprintedition.lrphotoid',
-
-		'at.homebrew.lrprintedition.excatalogname',
+		'at.homebrew.lrprintedition.lotno',
 
 		'at.homebrew.lrprintedition.copy',
 

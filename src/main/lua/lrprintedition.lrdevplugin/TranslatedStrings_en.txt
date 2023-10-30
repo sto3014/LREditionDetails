@@ -1,8 +1,7 @@
 "$$$/LRPrintEdition/Metadata/CusLabel=Print Edition"
 "$$$/LRPrintEdition/Metadata/Tagset/Title=Print Edition"
-"$$$/LRPrintEdition/Metadata/Fields/Display/LRCatalogName=Lightroom Catalog"
-"$$$/LRPrintEdition/Metadata/Fields/Display/LRPhotoID=Photo ID"
-"$$$/LRPrintEdition/Metadata/Fields/Display/ExCatalogName=External Catalog"
+"$$$/LRPrintEdition/Metadata/Fields/Display/CatalogName=Catalog"
+"$$$/LRPrintEdition/Metadata/Fields/Display/LotNo=Lot"
 "$$$/LRPrintEdition/Metadata/Fields/Display/Copy=Copy"
 "$$$/LRPrintEdition/Metadata/Fields/Display/Edition=Edition"
 "$$$/LRPrintEdition/Metadata/Fields/Display/Mark=Mark"
@@ -14,4 +13,8 @@
 "$$$/LRPrintEdition/Metadata/OrigLabel=Standard"
 "$$$/LRPrintEdition/Metadata/ExifLabel=EXIF"
 "$$$/LRPrintEdition/Metadata/Fields/Display/Comment=Comment"
-"$$$/LRPrintEdition/Menu/Library/SetLRPhotoID=Set LR Photo ID"
+"$$$/LRPrintEdition/Menu/Library/SetLRPhotoID=Set Photo Source"
+"$$$/LRPrintEdition/Menu/Library/SetLRPCatalogName=Set Catalog Number"
+
+
+
