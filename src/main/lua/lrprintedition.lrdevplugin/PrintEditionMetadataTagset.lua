@@ -13,6 +13,8 @@ return{
 		'com.adobe.title',
 		{ 'com.adobe.caption', height_in_lines = 3 },
 
+		'com.adobe.copyname',
+
 		'com.adobe.separator',
 
 		{ "com.adobe.copyrightState", pruneRedundantFields = false },
@@ -26,6 +28,8 @@ return{
 			formatter = "com.adobe.label",
 			label = LOC "$$$/LRPrintEdition/Metadata/Tagset/Title=Print Edition",
 		},
+
+		'at.homebrew.lrprintedition.catalogtype',
 
 		'at.homebrew.lrprintedition.catalogname',
 

@@ -25,6 +25,23 @@ local PrintEditionMetadataDefinition = {
             searchable = true,
         },
         {
+            id = 'catalogtype',
+            title = LOC "$$$/LRPrintEdition/Metadata/Fields/Display/CatalogType=Catalog Type",
+            dataType = 'enum',
+            browsable = true,
+            searchable = true,
+            values = {
+                {
+                    value = nil,
+                    title = LOC "$$$/LRPrintEdition/Metadata/Fields/Display/CatalogType/External=External",
+                },
+                {
+                    value = 'Lightroom',
+                    title = LOC "$$$/LRPrintEdition/Metadata/Fields/Display/CatalogType/Lightroom=Lightroom",
+                },
+            },
+        },
+        {
             id = 'copy',
             title = LOC "$$$/LRPrintEdition/Metadata/Fields/Display/Copy=Copy",
             dataType = 'string',
