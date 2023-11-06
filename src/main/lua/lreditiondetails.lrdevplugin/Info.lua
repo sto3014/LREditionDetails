@@ -7,7 +7,7 @@ return {
 	LrPluginName = LOC "$$$/LRPrintEdition/Metadata/CusLabel=Print Edition",
 
 	-- Add the Metadata Definition File
-	LrMetadataProvider = 'PrintEditionMetadataDefinition.lua',
+	LrMetadataProvider = 'EditionDetailsMetadataDefinition.lua',
 	
 	-- Add the Metadata Tagset File
 	LrMetadataTagsetFactory = {
