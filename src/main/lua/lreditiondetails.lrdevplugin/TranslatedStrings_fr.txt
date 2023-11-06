@@ -1,0 +1,23 @@
+"$$$/LRPrintEdition/Metadata/CusLabel=Edition Details"
+"$$$/LRPrintEdition/Metadata/Tagset/Title=Edition Details"
+"$$$/LRPrintEdition/Metadata/Fields/Display/CatalogName=Nom du catalogue"
+"$$$/LRPrintEdition/Metadata/Fields/Display/LotNo=Numéro du lot"
+"$$$/LRPrintEdition/Metadata/Fields/Display/Copy=Exemplaire"
+"$$$/LRPrintEdition/Metadata/Fields/Display/CatalogType=Type de catalogue"
+"$$$/LRPrintEdition/Metadata/Fields/Display/CatalogType/Lightroom=Lightroom"
+"$$$/LRPrintEdition/Metadata/Fields/Display/CatalogType/External=Externe"
+"$$$/LRPrintEdition/Metadata/Fields/Display/Edition=Tirage"
+"$$$/LRPrintEdition/Metadata/Fields/Display/Mark=Signature"
+"$$$/LRPrintEdition/Metadata/Fields/Display/Mark/eh=E.H."
+"$$$/LRPrintEdition/Metadata/Fields/Display/Mark/hc=H.C."
+"$$$/LRPrintEdition/Metadata/Fields/Display/Mark/ap=A.P."
+"$$$/LRPrintEdition/Metadata/Fields/Display/Mark/pp=P.P."
+"$$$/LRPrintEdition/Metadata/Fields/Display/Mark/ee=E.E."
+"$$$/LRPrintEdition/Metadata/Fields/Display/Mark/none=Aucune"
+"$$$/LRPrintEdition/Metadata/OrigLabel=Par défaut"
+"$$$/LRPrintEdition/Metadata/ExifLabel=EXIF"
+"$$$/LRPrintEdition/Metadata/Fields/Display/Comment=Commentaire"
+"$$$/LRPrintEdition/Menu/Library/SetLRPCatalogName=Initialiser les détails du tirage"
+
+
+

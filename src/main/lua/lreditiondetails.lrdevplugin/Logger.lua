@@ -4,7 +4,7 @@
 --- Date: 29.10.2023
 ---
 local LrLogger = import("LrLogger")
-local _logger = LrLogger("PrintEditionLrLogger")
+local _logger = LrLogger("EditionDetailsLrLogger")
 _logger:enable("logfile")
 local enabled = true
 -------------------------------------------------------------------------------

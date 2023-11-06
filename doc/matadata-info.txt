@@ -14,3 +14,37 @@ Mark 	Markierung 			enum
 	A.P.
 	P.P.
 	<leer>
+
+
+	"$$$/LRPrintEdition/Metadata/Fields/Display/Mark/eh=E.H. (Epreuve d’Artiste)"
+    "$$$/LRPrintEdition/Metadata/Fields/Display/Mark/hc=H.C. (Hors Commerce)"
+    "$$$/LRPrintEdition/Metadata/Fields/Display/Mark/ap=A.P. (Artist Print)"
+    "$$$/LRPrintEdition/Metadata/Fields/Display/Mark/pp=P.P. (Printers Proof)"
+    "$$$/LRPrintEdition/Metadata/Fields/Display/Mark/ee=E.E. (Epreuve d’Etat)"
+
+
+Katalog Name
+Los Nummer
+Exemplar
+Katalog Typ
+Extern
+Ausgabe
+Signatur
+Keine
+Standard
+Kommentar
+Initialisieren Edition Details
+
+
+
+Nom du catalogue
+Numéro du lot
+Exemplaire
+Type de catalogue
+Externe
+Tirage
+Signature
+Sans
+Par défaut
+Commentaire
+Initialiser les détails du tirage

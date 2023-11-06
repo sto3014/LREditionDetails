@@ -82,6 +82,10 @@ local PrintEditionMetadataDefinition = {
                     value = 'P.P.',
                     title = LOC "$$$/LRPrintEdition/Metadata/Fields/Display/Mark/pp=P.P.",
                 },
+                {
+                    value = 'E.E.',
+                    title = LOC "$$$/LRPrintEdition/Metadata/Fields/Display/Mark/ee=E.E.",
+                },
             },
         },
         {
@@ -101,7 +105,7 @@ local PrintEditionMetadataDefinition = {
         -- block. You should not call any of the with___Do functions yourself.
         logger.trace("start updateFromEarlierSchemaVersion")
 
-        catalog:assertHasPrivateWriteAccess("PrintEditionMetadataDefinition.updateFromEarlierSchemaVersion")
+ --[[       catalog:assertHasPrivateWriteAccess("PrintEditionMetadataDefinition.updateFromEarlierSchemaVersion")
 
         if previousSchemaVersion == 1 then
 
@@ -118,6 +122,8 @@ local PrintEditionMetadataDefinition = {
 
             -- Optional area to do further processing etc.
         end
+ ]]     
+        logger.trace("No metadata migration necessary")
         logger.trace("end updateFromEarlierSchemaVersion")
 
     end,
