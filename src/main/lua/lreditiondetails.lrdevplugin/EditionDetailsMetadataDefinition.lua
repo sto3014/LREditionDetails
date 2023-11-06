@@ -122,7 +122,7 @@ local PrintEditionMetadataDefinition = {
 
             -- Optional area to do further processing etc.
         end
- ]]     
+ ]]
         logger.trace("No metadata migration necessary")
         logger.trace("end updateFromEarlierSchemaVersion")
 
