@@ -1,3 +1,3 @@
 PluginInit = {
-	pluginID = "at.homebrew.lrprintedition",
+	pluginID = "at.homebrew.lreditiondetails",
 }

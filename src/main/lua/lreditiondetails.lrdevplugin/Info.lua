@@ -2,9 +2,9 @@ return {
 
 	LrSdkVersion = 3.0,
 	LrSdkMinimumVersion = 2.0,
-	LrToolkitIdentifier = 'at.homebrew.lrprintedition',
+	LrToolkitIdentifier = 'at.homebrew.lreditiondetails',
 
-	LrPluginName = LOC "$$$/LRPrintEdition/Metadata/CusLabel=Edition Details",
+	LrPluginName = LOC "$$$/LREditionDetails/Metadata/CusLabel=Edition Details",
 
 	-- Add the Metadata Definition File
 	LrMetadataProvider = 'EditionDetailsMetadataDefinition.lua',
@@ -15,7 +15,7 @@ return {
 	},
 	LrLibraryMenuItems = {
 		{
-			title = LOC "$$$/LRPrintEdition/Menu/Library/SetLRPCatalogName=Initialise Edition Details",
+			title = LOC "$$$/LREditionDetails/Menu/Library/SetLRPCatalogName=Initialise Edition Details",
 			file = "SetPhotoCatalog.lua",
 			enabledWhen = "photosSelected",
 		},

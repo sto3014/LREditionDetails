@@ -1,10 +1,11 @@
-return{
+require  "PluginInit"
 
-	title = LOC "$$$/LRPrintEdition/Metadata/Tagset/Title=Print Edition",
-	id = 'LRPrintEditionTagset',
+return{
+	title = LOC "$$$/LREditionDetails/Metadata/Tagset/Title=Edition Details",
+	id = 'LREditionDetailsTagset',
 	
 	items = {
-		{ 'com.adobe.label', label = LOC "$$$/LRPrintEdition/Metadata/OrigLabel=Standard Metadata" },
+		{ 'com.adobe.label', label = LOC "$$$/LREditionDetails/Metadata/OrigLabel=Standard Metadata" },
 		'com.adobe.filename',
 		'com.adobe.folder',
 		
@@ -26,27 +27,25 @@ return{
 		'com.adobe.separator',
 		{
 			formatter = "com.adobe.label",
-			label = LOC "$$$/LRPrintEdition/Metadata/Tagset/Title=Print Edition",
+			label = LOC "$$$/LREditionDetails/Metadata/Tagset/Title=Edition Details",
 		},
 
-		'at.homebrew.lrprintedition.catalogtype',
+		PluginInit.pluginID .. '.catalogtype',
 
-		'at.homebrew.lrprintedition.catalogname',
+		PluginInit.pluginID .. '.catalogname',
 
-		'at.homebrew.lrprintedition.lotno',
+		PluginInit.pluginID .. '.lotno',
 
-		'at.homebrew.lrprintedition.copy',
+		PluginInit.pluginID .. '.edition',
 
-		'at.homebrew.lrprintedition.edition',
+		PluginInit.pluginID .. '.mark',
 
-		'at.homebrew.lrprintedition.mark',
-
-		{'at.homebrew.lrprintedition.comment',height_in_lines = 3 },
+		{PluginInit.pluginID .. '.comment',height_in_lines = 3 },
 
 		"com.adobe.separator",
 		{
 			formatter = "com.adobe.label",
-			label = LOC "$$$/LRPrintEdition/Metadata/ExifLabel=EXIF",
+			label = LOC "$$$/LREditionDetails/Metadata/ExifLabel=EXIF",
 		},
 
 		"com.adobe.imageFileDimensions",		-- dimensions

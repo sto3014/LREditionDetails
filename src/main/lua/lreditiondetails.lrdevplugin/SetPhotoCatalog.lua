@@ -28,7 +28,7 @@ function TaskFunc(context)
         for _, photo in ipairs(photos) do
             local photoID = photo.localIdentifier
             local catalogType = photo:getPropertyForPlugin(_PLUGIN, "catalogtype")
-            if ( catalogType ~= nil ) then
+            if (catalogType == "Lightroom" ) then
                 photo:setPropertyForPlugin(_PLUGIN, "catalogname", catName)
                 logger.trace("catalogname=" .. catName)
                 photo:setPropertyForPlugin(_PLUGIN, "lotno", tostring(photoID))

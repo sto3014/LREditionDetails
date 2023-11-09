@@ -16,11 +16,11 @@ Mark 	Markierung 			enum
 	<leer>
 
 
-	"$$$/LRPrintEdition/Metadata/Fields/Display/Mark/eh=E.H. (Epreuve d’Artiste)"
-    "$$$/LRPrintEdition/Metadata/Fields/Display/Mark/hc=H.C. (Hors Commerce)"
-    "$$$/LRPrintEdition/Metadata/Fields/Display/Mark/ap=A.P. (Artist Print)"
-    "$$$/LRPrintEdition/Metadata/Fields/Display/Mark/pp=P.P. (Printers Proof)"
-    "$$$/LRPrintEdition/Metadata/Fields/Display/Mark/ee=E.E. (Epreuve d’Etat)"
+	"$$$/LREditionDetails/Metadata/Fields/Display/Mark/eh=E.H. (Epreuve d’Artiste)"
+    "$$$/LREditionDetails/Metadata/Fields/Display/Mark/hc=H.C. (Hors Commerce)"
+    "$$$/LREditionDetails/Metadata/Fields/Display/Mark/ap=A.P. (Artist Print)"
+    "$$$/LREditionDetails/Metadata/Fields/Display/Mark/pp=P.P. (Printers Proof)"
+    "$$$/LREditionDetails/Metadata/Fields/Display/Mark/ee=E.E. (Epreuve d’Etat)"
 
 
 Katalog Name
