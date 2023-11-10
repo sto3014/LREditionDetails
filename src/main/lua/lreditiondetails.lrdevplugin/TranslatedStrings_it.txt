@@ -17,6 +17,11 @@
 "$$$/LREditionDetails/Metadata/ExifLabel=EXIF"
 "$$$/LREditionDetails/Metadata/Fields/Display/Comment=Commento"
 "$$$/LREditionDetails/Menu/Library/SetLRPCatalogName=Inizializzare i dettagli della tiratura"
+"$$$/LREditionDetails/Menu/Library/SetSource=Imposta sorgente per foto ID"
+"$$$/LREditionDetails/Menu/Library/SetLRPCatalogName#=Inizializzare i dettagli della tiratura per ^1 foto"
+"$$$/LREditionDetails/Menu/Library/SetSource#=Imposta sorgente per foto ID per ^1 foto"
+"$$$/LREditionDetails/Msg/NotAllPhotosWereProcessed=^1 foto su ^2 è stata aggiornata. Sono state elaborate solo foto di tipo catalogo Lightroom."
+
 
 
 

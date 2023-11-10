@@ -1,28 +1,33 @@
 return {
 
-	LrSdkVersion = 3.0,
-	LrSdkMinimumVersion = 2.0,
-	LrToolkitIdentifier = 'at.homebrew.lreditiondetails',
+    LrSdkVersion = 3.0,
+    LrSdkMinimumVersion = 2.0,
+    LrToolkitIdentifier = 'at.homebrew.lreditiondetails',
 
-	LrPluginName = LOC "$$$/LREditionDetails/Metadata/CusLabel=Edition Details",
+    LrPluginName = LOC "$$$/LREditionDetails/Metadata/CusLabel=Edition Details",
 
-	-- Add the Metadata Definition File
-	LrMetadataProvider = 'EditionDetailsMetadataDefinition.lua',
-	
-	-- Add the Metadata Tagset File
-	LrMetadataTagsetFactory = {
-		'EditionDetailsMetadataTagset.lua',
-	},
-	LrLibraryMenuItems = {
-		{
-			title = LOC "$$$/LREditionDetails/Menu/Library/SetLRPCatalogName=Initialise Edition Details",
-			file = "SetPhotoCatalog.lua",
-			enabledWhen = "photosSelected",
-		},
-	},
+    -- Add the Metadata Definition File
+    LrMetadataProvider = 'EditionDetailsMetadataDefinition.lua',
 
-	LrInitPlugin = "InitPlugin.lua",
+    -- Add the Metadata Tagset File
+    LrMetadataTagsetFactory = {
+        'EditionDetailsMetadataTagset.lua',
+    },
+    LrLibraryMenuItems = {
+        {
+            title = LOC "$$$/LREditionDetails/Menu/Library/SetSource=Set source",
+            file = "SetPhotoSource.lua",
+            enabledWhen = "anythingSelected",
+        },
+        {
+            title = LOC "$$$/LREditionDetails/Menu/Library/SetLRPCatalogName=Initialise Edition Details",
+            file = "SetPhotoCatalog.lua",
+            enabledWhen = "photosSelected",
+        },
+    },
 
-	VERSION = { major=1, minor=0, revision=0, build=0, },
+    LrInitPlugin = "InitPlugin.lua",
+
+    VERSION = { major = 1, minor = 0, revision = 0, build = 0, },
 
 }

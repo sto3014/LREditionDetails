@@ -17,6 +17,11 @@
 "$$$/LREditionDetails/Metadata/ExifLabel=EXIF"
 "$$$/LREditionDetails/Metadata/Fields/Display/Comment=Commentaire"
 "$$$/LREditionDetails/Menu/Library/SetLRPCatalogName=Initialiser les détails du tirage"
+"$$$/LREditionDetails/Menu/Library/SetSource=Définir source par photo ID"
+"$$$/LREditionDetails/Menu/Library/SetLRPCatalogName#=Initialiser les détails du tirage pour ^1 photo(s)"
+"$$$/LREditionDetails/Menu/Library/SetSource#=Définir source par photo ID pour ^1 photo(s)"
+"$$$/LREditionDetails/Msg/NotAllPhotosWereProcessed=^1 photo(s) sur ^2 a(ont) été mise(s) à jour. Seules les photos du type de catalogue Lightroom ont été traitées."
+
 
 
 

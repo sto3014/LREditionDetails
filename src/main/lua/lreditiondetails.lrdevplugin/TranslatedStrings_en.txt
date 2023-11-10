@@ -17,6 +17,12 @@
 "$$$/LREditionDetails/Metadata/ExifLabel=EXIF"
 "$$$/LREditionDetails/Metadata/Fields/Display/Comment=Comment"
 "$$$/LREditionDetails/Menu/Library/SetLRPCatalogName=Initialise Edition Details"
+"$$$/LREditionDetails/Menu/Library/SetSource=Set source by photo ID"
+"$$$/LREditionDetails/Menu/Library/SetLRPCatalogName#=Initialise Edition Details for ^1 photo(s)"
+"$$$/LREditionDetails/Menu/Library/SetSource#=Set source by photo ID for ^1 photo(s)"
+"$$$/LREditionDetails/Msg/NotAllPhotosWereProcessed=^1 photo(s) of ^2 have been updated. Only photos of catalog type Lightroom have been processed."
+
+
 
 
 
