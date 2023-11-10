@@ -20,11 +20,11 @@ mkdir -p "$TARGET_DIR_MAC/Modules/$PACKAGE_NAME.lrplugin"
 
 cp -R $SOURCE_DIR/* "$TARGET_DIR_MAC/Modules/$PACKAGE_NAME.lrplugin"
 # compile
-cd "$TARGET_DIR_MAC/Modules/$PACKAGE_NAME.lrplugin"
-for f in *.lua
-do
- luac5.1 -o $f $f
-done
+#cd "$TARGET_DIR_MAC/Modules/$PACKAGE_NAME.lrplugin"
+#for f in *.lua
+#do
+# luac5.1 -o $f $f
+#done
 # cd $RESOURCE_DIR
 # cp -R * "$TARGET_DIR_MAC"
 cd "$SCRIPT_DIR/target/mac"
@@ -41,11 +41,11 @@ mkdir -p "$TARGET_DIR_WIN/Modules/$PACKAGE_NAME.lrplugin"
 
 cp -R $SOURCE_DIR/* "$TARGET_DIR_WIN/Modules/$PACKAGE_NAME.lrplugin"
 # compile
-cd "$TARGET_DIR_WIN/Modules/$PACKAGE_NAME.lrplugin"
-for f in *.lua
-do
- luac5.1 -o $f $f
-done
+#cd "$TARGET_DIR_WIN/Modules/$PACKAGE_NAME.lrplugin"
+#for f in *.lua
+#do
+# luac5.1 -o $f $f
+#done
 # cd $RESOURCE_DIR
 # cp -R * "$TARGET_DIR_WIN"
 cd $SCRIPT_DIR/target/win
