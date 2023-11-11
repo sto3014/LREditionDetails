@@ -16,8 +16,16 @@ This plug-in provides metadata for print editions.
 
 1. Download the zip archive LREditionDetails-1.0.0.0.zip from
    [GitHub](https://github.com/sto3014/LREditionDetails/archive/refs/tags/1.0.0.0.zip).
-2. Extract the archive in the download folder
-3. Copy the extracted archive folder (Windows: AppData, macOS: Library) into your home directory
+2. Extract the archive in the download folder.
+3. Install plug-in
+   1. On Windows  
+      In Explore goto `Downloads\LREditionDetails-1.0.0.0` and double click `install.bat`.
+   2. On macOS  
+      Open a terminal window, change to `Downloads/LREditionDetails-1.0.0.0` and execute `install.sh`:
+       ```
+       -> ~ cd Downloads/LREditionDetails-1.0.0.0
+       -> ./install.sh 
+       ```
 4. Restart Lightroom
 
 ## Usage
