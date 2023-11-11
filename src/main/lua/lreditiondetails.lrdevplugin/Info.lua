@@ -15,12 +15,12 @@ return {
     },
     LrLibraryMenuItems = {
         {
-            title = LOC "$$$/LREditionDetails/Menu/Library/SetSource=Set source",
+            title = LOC "$$$/LREditionDetails/Menu/Library/SetSource=Set source by photo ID",
             file = "SetPhotoSource.lua",
             enabledWhen = "anythingSelected",
         },
         {
-            title = LOC "$$$/LREditionDetails/Menu/Library/SetLRPCatalogName=Initialise Edition Details",
+            title = LOC "$$$/LREditionDetails/Menu/Library/SetLRPCatalogName=Initialize edition details",
             file = "SetPhotoCatalog.lua",
             enabledWhen = "photosSelected",
         },

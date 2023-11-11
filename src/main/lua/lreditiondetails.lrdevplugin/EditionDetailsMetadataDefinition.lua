@@ -12,21 +12,21 @@ local EditionDetailsMetadataDefinition = {
 
         {
             id = 'catalogname',
-            title = LOC "$$$/LREditionDetails/Metadata/Fields/Display/CatalogName=Catalog",
+            title = LOC "$$$/LREditionDetails/Metadata/Fields/Display/CatalogName=Catalog name",
             dataType = 'string',
             browsable = true,
             searchable = true,
         },
         {
             id = 'lotno',
-            title = LOC "$$$/LREditionDetails/Metadata/Fields/Display/LotNo=Lot",
+            title = LOC "$$$/LREditionDetails/Metadata/Fields/Display/LotNo=Lot number",
             dataType = 'string',
             browsable = true,
             searchable = true,
         },
         {
             id = 'catalogtype',
-            title = LOC "$$$/LREditionDetails/Metadata/Fields/Display/CatalogType=Catalog Type",
+            title = LOC "$$$/LREditionDetails/Metadata/Fields/Display/CatalogType=Catalog type",
             dataType = 'enum',
             browsable = true,
             searchable = true,
@@ -44,14 +44,14 @@ local EditionDetailsMetadataDefinition = {
 
         {
             id = 'edition',
-            title = LOC "$$$/LREditionDetails/Metadata/Fields/Display/Edition=Edition",
+            title = LOC "$$$/LREditionDetails/Metadata/Fields/Display/Edition=Run size",
             dataType = 'string',
             browsable = true,
             searchable = true,
         },
         {
             id = 'mark',
-            title = LOC "$$$/LREditionDetails/Metadata/Fields/Display/Mark=Mark",
+            title = LOC "$$$/LREditionDetails/Metadata/Fields/Display/Mark=Signature",
             dataType = 'enum',
             browsable = true,
             searchable = true,

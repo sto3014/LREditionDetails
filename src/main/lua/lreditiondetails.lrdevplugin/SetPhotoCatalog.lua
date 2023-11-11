@@ -21,7 +21,7 @@ function TaskFunc(context)
     local activeCatalog = LrApplication.activeCatalog()
     local photos = activeCatalog:getTargetPhotos()
     local progress = LrProgressScope({
-        title = LOC ("$$$/LREditionDetails/Menu/Library/SetLRPCatalogName#=Initialise Edition Details for ^1 photos", #photos),
+        title = LOC ("$$$/LREditionDetails/Menu/Library/SetLRPCatalogName#=Initialise edition details for ^1 photos", #photos),
         functionContext = context
     })
     local catName = lrutils.getCatName()
@@ -41,7 +41,7 @@ function TaskFunc(context)
         end
     end)
     if ( #photos ~= processedPhotos) then
-        LrDialogs.message(LOC("$$$/LREditionDetails/Msg/NotAllPhotosWereProcessed=Only ^1 photo(s) of ^2 were updated. Only photos of external catalog type will be processed.", processedPhotos, #photos))
+        LrDialogs.message(LOC("$$$/LREditionDetails/Msg/NotAllPhotosWereProcessed=1 photo(s) of ^2 have been updated. Only photos of catalog type Lightroom have been processed.", processedPhotos, #photos))
     end
     progress:done()
 end
