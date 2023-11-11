@@ -1,18 +1,14 @@
 # LREditionDetails
 
 ---
-This plug-in provides metadata for editions.
+This plug-in provides metadata for print editions.
 
 ## Features
 
 ---
 
 * Set source tag by the photo ID
-* Provide tags for editions
-
-## Requirements
-
----
+* Provide tags for print editions
 
 ## Installation
 
@@ -21,15 +17,7 @@ This plug-in provides metadata for editions.
 1. Download the zip archive LREditionDetails-1.0.0.0.zip from
    [GitHub](https://github.com/sto3014/LREditionDetails/archive/refs/tags/1.0.0.0.zip).
 2. Extract the archive in the download folder
-3. Open a terminal window, change to Downloads/LREditionDetails-1.0.0.0 and execute install.sh:
-    ```
-   -> ~ cd Downloads/LREditionDetails-1.0.0.0
-   -> ./install.sh 
-    ```
-   Install.sh extracts the plug-in into:
-    ```
-    ~/Library/Application Support/Adobe/Lightroom/Modules/LREditionDetails.lrplugin
-    ```
+3. Copy the extracted archive folder (Windows: AppData, macOS: Library) into your home directory
 4. Restart Lightroom
 
 ## Usage
@@ -43,8 +31,8 @@ catalog. The catalog name is the filename of the Lightroom catalog without the s
 will be removed from ith name. Example:
 
 * Catalog filename: mycatalog-v13.lrcat
-* Photo ID: 42123456
-* value of source tag: mycatalog-42123456
+* Photo ID: 12345678
+* value of source tag will be: mycatalog-12345678
 
 To set source you must select one or more photos or videos and select _Set source by photo ID_ from the
 _Library/Plug-In Extras_ menu.
@@ -53,7 +41,7 @@ Remarks: The source tag can be used in file naming templates of the export dialo
 
 ### Tags for editions
 
-In the new tagset _Edition Details_ underneath of label _Edition Details_ are 6 new tags:
+In the new tagset _Edition Details_ underneath of label _Edition Details_ you will find 6 new tags:
 
 * Catalog type
 * Catalog name
@@ -66,7 +54,7 @@ The drop down list _Catalog type_ has two values: _External_ and _Lightroom_. Th
 _Catalog name_ and _Lot number_ comes out of an external catalog index. If you want to display Lightroom information for
 the catalog name and the lot number set _Catalog type_ to _Lightroom_ and initialize their values by selecting
 _Initialize edition details_ from the _Library/Plug-In Extras_ menu.
-This menu action sets _Catalog name_ to the filename of the Lightroom catalog (without file and version suffix) and _Lot
+This action sets _Catalog name_ to the filename of the Lightroom catalog (without file and version suffix) and _Lot
 number_ to the internal photo ID.
 
 When you print your photos, you can note the print run size in the corresponding tag and use the signature dropdown
