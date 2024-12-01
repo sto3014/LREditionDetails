@@ -89,6 +89,14 @@ local EditionDetailsMetadataDefinition = {
             browsable = true,
             searchable = true,
         },
+        {
+            id = 'qrcode',
+            title = LOC "$$$/LREditionDetails/Metadata/Fields/Display/QRCode=OR code",
+            dataType = 'string',
+            browsable = true,
+            searchable = true,
+        },
+
     },
 
     schemaVersion = 1, -- must be a number, preferably a positive integer

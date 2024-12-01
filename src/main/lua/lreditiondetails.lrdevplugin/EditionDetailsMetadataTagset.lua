@@ -40,7 +40,10 @@ return{
 
 		PluginInit.pluginID .. '.mark',
 
+		PluginInit.pluginID .. '.qrcode',
+
 		{PluginInit.pluginID .. '.comment',height_in_lines = 3 },
+
 
 		"com.adobe.separator",
 		{

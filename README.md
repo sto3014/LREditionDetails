@@ -14,16 +14,16 @@ This plug-in provides metadata for print editions.
 
 ---
 
-1. Download the zip archive LREditionDetails-1.0.0.0.zip from
-   [GitHub](https://github.com/sto3014/LREditionDetails/archive/refs/tags/1.0.0.0.zip).
+1. Download the zip archive LREditionDetails-1.1.0.0.zip from
+   [GitHub](https://github.com/sto3014/LREditionDetails/archive/refs/tags/1.1.0.0.zip).
 2. Extract the archive in the download folder.
 3. Install plug-in
    1. On Windows  
-      In Explore goto `Downloads\LREditionDetails-1.0.0.0` and double click `install.bat`.
+      In Explore goto `Downloads\LREditionDetails-1.1.0.0` and double click `install.bat`.
    2. On macOS  
-      Open a terminal window, change to `Downloads/LREditionDetails-1.0.0.0` and execute `install.sh`:
+      Open a terminal window, change to `Downloads/LREditionDetails-1.1.0.0` and execute `install.sh`:
        ```
-       -> ~ cd Downloads/LREditionDetails-1.0.0.0
+       -> ~ cd Downloads/LREditionDetails-1.1.0.0
        -> ./install.sh 
        ```
 4. Restart Lightroom
@@ -56,6 +56,7 @@ In the new tagset _Edition Details_ underneath of label _Edition Details_ you wi
 * Lot number
 * Run size
 * Signature
+* QR code
 * Comment
 
 The drop down list _Catalog type_ has two values: _External_ and _Lightroom_. The value _External_ can be used if
@@ -84,6 +85,14 @@ The _Signature_ drop down tag has 5 values:
   The sheets marked in this way are proofs or state prints that were printed during the artist's work for checking
   purposes. The sheets do not yet have the final version printed as an edition and are therefore often coveted
   collector's items.
+
+### QR code
+
+QR code images (png) can be created by selecting one or more photos or videos and select _Create QR code_ from the
+_Library/Plug-In Extras_ menu.
+The created code uses the content of the new _QR code_ tag. Other configuration parameters can be set in the _QR code_
+dialog. 
+The image is create in your picture folder, subfolder QRCodes.
 
 ## Reference
 

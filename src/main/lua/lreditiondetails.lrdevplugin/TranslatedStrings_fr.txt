@@ -22,6 +22,16 @@
 "$$$/LREditionDetails/Menu/Library/SetSource#=Définir source par photo ID pour ^1 photo(s)"
 "$$$/LREditionDetails/Msg/NotAllPhotosWereProcessed=^1 photo(s) sur ^2 a(ont) été mise(s) à jour. Seules les photos du type de catalogue Lightroom ont été traitées."
 
-
-
+"$$$/LREditionDetails/Menu/Library/CreateQRCode=Créer un code QR"
+"$$$/LREditionDetails/Menu/Library/CreateQRCodeProgress=Créer un code QR pour ^1 photo(s)"
+"$$$/LREditionDetails/Metadata/Fields/Display/QRCode=OR code"
+"$$$/LREditionDetails/Dialog/QRCode/With=Largeur de l'image"
+"$$$/LREditionDetails/Dialog/QRCode/Height=Hauteur de l'image"
+"$$$/LREditionDetails/Dialog/QRCode/Transparent=Fond transparent"
+"$$$/LREditionDetails/Dialog/QRCode/IncludeMainTitle=Inclure le titre principal"
+"$$$/LREditionDetails/Dialog/QRCode/IncludeSubTitle=Inclure le sous-titre"
+"$$$/LREditionDetails/Dialog/title=Titre"
+"$$$/LREditionDetails/Dialog/fileName=Nom de fichier"
+"$$$/LREditionDetails/Dialog/copyright=Copyright"
+"$$$/LREditionDetails/Dialog/artist=Artiste"
 
