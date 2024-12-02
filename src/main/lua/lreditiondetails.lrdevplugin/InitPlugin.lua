@@ -26,7 +26,7 @@ local function resetPrefs()
     prefs.qrSubTitlePropertyEnabled = nil
     prefs.qrErrorCorrectionLevel=nil
     prefs.qrGenerator=nil
-
+    prefs.qrSetHeightSeparately=nil
 end
 
 -------------------------------------------------------------------------------
@@ -69,6 +69,13 @@ local function init()
     if prefs.qrGenerator == nil or prefs.qrGenerator=="" then
         prefs.qrGenerator="nayuki"
     end
+    if prefs.qrGenerator == nil or prefs.qrGenerator=="" then
+        prefs.qrGenerator="nayuki"
+    end
+    if prefs.qrSetHeightSeparately == nil  then
+        prefs.qrSetHeightSeparately=false
+    end
+
     logger.trace("Init done.")
 end
 

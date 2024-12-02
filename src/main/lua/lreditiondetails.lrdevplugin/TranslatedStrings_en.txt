@@ -47,3 +47,4 @@
 "$$$/LREditionDetails/Dialog/QRCode/GeneratorNayuki=Nayuki"
 "$$$/LREditionDetails/Dialog/QRCode/GeneratorZxing=Zxing"
 
+"$$$/LREditionDetails/Dialog/QRCode/SetHeightSeparately=Set height separately"

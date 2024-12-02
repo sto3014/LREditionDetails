@@ -216,6 +216,11 @@ LrFunctionContext.callWithContext("createQRCode", function(context)
     props.qrSubTitlePropertyEnabled = prefs.qrSubTitlePropertyEnabled
     props.qrErrorCorrectionLevel = prefs.qrErrorCorrectionLevel
     props.qrGenerator = prefs.qrGenerator
+    props.qrSetHeightSeparately = prefs.qrSetHeightSeparately
+
+    if ( props.qrSetHeightSeparately == false) then
+        props.qrHeight = props.qrWidth
+    end
 
     -- Create the contents for the dialog.
     local content = factory:column {
@@ -333,12 +338,32 @@ LrFunctionContext.callWithContext("createQRCode", function(context)
                 min = 50,
                 max = 9999,
                 precision = 0, value = LrView.bind("qrWidth"),
+                validate = function( view, value )
+                    if props.qrSetHeightSeparately == false then
+                        props.qrHeight = value
+                    end
+                    return true, value
+                end
             },
             factory:static_text {
+                alignment = "left",
                 width = LrView.share("LabelWidth"),
                 title = LOC "$$$/LREditionDetails/Dialog/QRCode/Pixel=px",
             },
         },
+        factory:row {
+            factory:static_text {
+                alignment = "left",
+                width = LrView.share("LabelWidth"),
+                title = LOC "$$$/LREditionDetails/Dialog/QRCode/SetHeightSeparately=Set height separately",
+            },
+            factory:checkbox {
+                alignment = "left",
+                value = LrView.bind("qrSetHeightSeparately"),
+
+            },
+        },
+
         factory:row {
             factory:static_text {
                 width = LrView.share("LabelWidth"),
@@ -350,6 +375,7 @@ LrFunctionContext.callWithContext("createQRCode", function(context)
                 min = 50,
                 max = 9999,
                 value = LrView.bind("qrHeight"),
+                enabled = LrView.bind("qrSetHeightSeparately"),
             },
             factory:static_text {
                 width = LrView.share("LabelWidth"),
@@ -431,8 +457,8 @@ LrFunctionContext.callWithContext("createQRCode", function(context)
     if (r == "ok") then
         prefs = LrPrefs.prefsForPlugin()
 
-        prefs.qrWidth = props.qrHeight
-        prefs.qrHeight = props.qrWidth
+        prefs.qrWidth = props.qrWidth
+        prefs.qrHeight = props.qrHeight
         prefs.qrTransparent = props.qrTransparent
         prefs.qrMainTitle = props.qrMainTitle
         prefs.qrSubTitle = props.qrSubTitle
@@ -442,6 +468,11 @@ LrFunctionContext.callWithContext("createQRCode", function(context)
         prefs.qrSubTitlePropertyEnabled = props.qrSubTitlePropertyEnabled
         prefs.qrGenerator = props.qrGenerator
         prefs.qrErrorCorrectionLevel = props.qrErrorCorrectionLevel
+        prefs.qrSetHeightSeparately = props.qrSetHeightSeparately
+
+        if (  prefs.qrSetHeightSeparately == false) then
+            prefs.Height = prefs.qrWidth
+        end
 
         logger.trace("qrMainTitle=" .. tostring(prefs.qrMainTitle))
         LrFunctionContext.postAsyncTaskWithContext("Create QR Code", TaskFunc)

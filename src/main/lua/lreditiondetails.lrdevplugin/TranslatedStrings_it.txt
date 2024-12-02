@@ -44,3 +44,5 @@
 "$$$/LREditionDetails/Dialog/QRCode/Generator=Generator"
 "$$$/LREditionDetails/Dialog/QRCode/GeneratorNayuki=Nayuki"
 "$$$/LREditionDetails/Dialog/QRCode/GeneratorZxing=Zxing"
+
+"$$$/LREditionDetails/Dialog/QRCode/SetHeightSeparately=Impostare l'altezza separatamente"
