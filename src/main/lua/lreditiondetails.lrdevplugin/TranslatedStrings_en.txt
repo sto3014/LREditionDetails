@@ -22,6 +22,7 @@
 "$$$/LREditionDetails/Menu/Library/SetSource#=Set source by photo ID for ^1 photo(s)"
 "$$$/LREditionDetails/Msg/NotAllPhotosWereProcessed=^1 photo(s) of ^2 have been updated. Only photos of catalog type Lightroom have been processed."
 
+
 "$$$/LREditionDetails/Menu/Library/CreateQRCode=Create QR Code"
 "$$$/LREditionDetails/Menu/Library/CreateQRCodeProgress=Create QR Code for ^1 photo(s)"
 "$$$/LREditionDetails/Metadata/Fields/Display/QRCode=OR code"
@@ -30,9 +31,19 @@
 "$$$/LREditionDetails/Dialog/QRCode/Transparent=Transparent Background"
 "$$$/LREditionDetails/Dialog/QRCode/IncludeMainTitle=Include main title"
 "$$$/LREditionDetails/Dialog/QRCode/IncludeSubTitle=Include subtitle"
+
 "$$$/LREditionDetails/Dialog/title=Title"
 "$$$/LREditionDetails/Dialog/fileName=Filename"
 "$$$/LREditionDetails/Dialog/copyright=Copyright"
 "$$$/LREditionDetails/Dialog/artist=Artist"
 
+"$$$/LREditionDetails/Msg/NotAllQRCodesWereCreated=Only ^1 QR code(s) of ^2 was/were created. Maybe property QR code was not set for all photos."
+"$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevel=Error correction level"
+"$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelL=Low"
+"$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelM=Medium"
+"$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelQ=Quartile"
+"$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelH=High"
+"$$$/LREditionDetails/Dialog/QRCode/Generator=Generator"
+"$$$/LREditionDetails/Dialog/QRCode/GeneratorNayuki=Nayuki"
+"$$$/LREditionDetails/Dialog/QRCode/GeneratorZxing=Zxing"
 

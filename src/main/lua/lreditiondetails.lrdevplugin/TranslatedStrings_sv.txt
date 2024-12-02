@@ -33,3 +33,13 @@
 "$$$/LREditionDetails/Dialog/fileName=Filnamn"
 "$$$/LREditionDetails/Dialog/copyright=Copyright"
 "$$$/LREditionDetails/Dialog/artist=Konstnär"
+
+"$$$/LREditionDetails/Msg/NotAllQRCodesWereCreated=Endast ^1 QR-kod(er) av ^2 skapades. Kanske var QR-koden för egendom inte inställd för alla foton."
+"$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevel=Felkorrigeringsnivå"
+"$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelL=Låg"
+"$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelM=Medium"
+"$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelQ=Kvartil"
+"$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelH=Hög"
+"$$$/LREditionDetails/Dialog/QRCode/Generator=Generator"
+"$$$/LREditionDetails/Dialog/QRCode/GeneratorNayuki=Nayuki"
+"$$$/LREditionDetails/Dialog/QRCode/GeneratorZxing=Zxing"

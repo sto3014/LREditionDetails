@@ -35,3 +35,13 @@
 "$$$/LREditionDetails/Dialog/copyright=Copyright"
 "$$$/LREditionDetails/Dialog/artist=Artiste"
 
+"$$$/LREditionDetails/Msg/NotAllQRCodesWereCreated=Seul(s) ^1 code(s) QR de ^2 a/ont été créé(s). Peut-être que le code QR de propriété n'a pas été défini pour toutes les photos."
+"$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevel=Niveau de correction des erreurs"
+"$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelL=Faible"
+"$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelM=Moyen"
+"$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelQ=Quartile"
+"$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelH=Haut"
+"$$$/LREditionDetails/Dialog/QRCode/Generator=Générateur"
+"$$$/LREditionDetails/Dialog/QRCode/GeneratorNayuki=Nayuki"
+"$$$/LREditionDetails/Dialog/QRCode/GeneratorZxing=Zxing"
+

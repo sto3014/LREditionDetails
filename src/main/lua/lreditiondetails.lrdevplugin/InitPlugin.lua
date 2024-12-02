@@ -24,6 +24,8 @@ local function resetPrefs()
     prefs.qrSubTitleProperty = nil
     prefs.qrMainTitlePropertyEnabled = nil
     prefs.qrSubTitlePropertyEnabled = nil
+    prefs.qrErrorCorrectionLevel=nil
+    prefs.qrGenerator=nil
 
 end
 
@@ -60,6 +62,12 @@ local function init()
     end
     if prefs.qrSubTitlePropertyEnabled == nil then
         prefs.qrSubTitlePropertyEnabled = true
+    end
+    if prefs.qrErrorCorrectionLevel == nil then
+        prefs.qrErrorCorrectionLevel="1"
+    end
+    if prefs.qrGenerator == nil or prefs.qrGenerator=="" then
+        prefs.qrGenerator="nayuki"
     end
     logger.trace("Init done.")
 end

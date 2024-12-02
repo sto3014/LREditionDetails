@@ -33,3 +33,13 @@
 "$$$/LREditionDetails/Dialog/fileName=Filnavn"
 "$$$/LREditionDetails/Dialog/copyright=Copyright"
 "$$$/LREditionDetails/Dialog/artist=Kunstner"
+
+"$$$/LREditionDetails/Msg/NotAllQRCodesWereCreated=Bare ^1 QR-kode(r) av ^2 ble opprettet. Kanskje QR-koden for egenskapen ikke ble angitt for alle bildene."
+"$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevel=Feilkorreksjonsnivå"
+"$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelL=Lav"
+"$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelM=Medium"
+"$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelQ=Kvartil"
+"$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelH=Høy"
+"$$$/LREditionDetails/Dialog/QRCode/Generator=Generator"
+"$$$/LREditionDetails/Dialog/QRCode/GeneratorNayuki=Nayuki"
+"$$$/LREditionDetails/Dialog/QRCode/GeneratorZxing=Zxing"

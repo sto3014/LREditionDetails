@@ -93,7 +93,7 @@ function TaskFunc(context)
 
     LrFileUtils.createAllDirectories(picPath)
 
-    local i = 0;
+    local processedPhotos = 0;
     local count = 0;
     local prefs = LrPrefs.prefsForPlugin()
     for _, photo in ipairs(photos) do
@@ -165,6 +165,8 @@ function TaskFunc(context)
                     .. " -w " .. tostring(prefs.qrWidth)
                     .. " -h " .. tostring(prefs.qrHeight)
                     .. " -t " .. tostring(prefs.qrTransparent)
+                    .. " -e " .. tostring(prefs.qrErrorCorrectionLevel)
+                    .. " -g " .. tostring(prefs.qrGenerator)
                     .. mainTitle
                     .. subTitle
 
@@ -179,11 +181,16 @@ function TaskFunc(context)
             end
 
         end
-        i = i + 1
-        progress:setPortionComplete(i, #photos)
+        processedPhotos = processedPhotos + 1
+        progress:setPortionComplete(processedPhotos, #photos)
     end
     --end)
     progress:done()
+
+    if ( #photos ~= count) then
+        LrDialogs.message(LOC("$$$/LREditionDetails/Msg/NotAllQRCodesWereCreated=Only ^1 qr-code(s) of ^2 have been created. Maybe property qr code was not set for all photos.", count, #photos))
+    end
+
     if count > 0 then
         activeCatalog:triggerImportUI(picPath)
     end
@@ -207,6 +214,8 @@ LrFunctionContext.callWithContext("createQRCode", function(context)
     props.qrSubTitleProperty = prefs.qrSubTitleProperty
     props.qrMainTitlePropertyEnabled = prefs.qrMainTitlePropertyEnabled
     props.qrSubTitlePropertyEnabled = prefs.qrSubTitlePropertyEnabled
+    props.qrErrorCorrectionLevel = prefs.qrErrorCorrectionLevel
+    props.qrGenerator = prefs.qrGenerator
 
     -- Create the contents for the dialog.
     local content = factory:column {
@@ -356,6 +365,59 @@ LrFunctionContext.callWithContext("createQRCode", function(context)
                 value = LrView.bind("qrTransparent"),
             },
         },
+
+        factory:row {
+            factory:static_text {
+                width = LrView.share("LabelWidth"),
+                title = LOC "$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevel=Error correction level",
+            },
+
+            factory:popup_menu({
+                value = LrView.bind("qrErrorCorrectionLevel"),
+                width_in_chars = 4,
+                items = {
+                    {
+                        title = LOC("$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelL=Low"),
+                        value = "1"
+                    },
+                    {
+                        title = LOC("$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelM=Medium"),
+                        value = "0"
+                    },
+                    {
+                        title = LOC("$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelQ=Quartile"),
+                        value = "3"
+                    },
+                    {
+                        title = LOC("$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelH=High"),
+                        value = "2"
+                    },
+                }
+            })
+
+        },
+        factory:row {
+            factory:static_text {
+                width = LrView.share("LabelWidth"),
+                title = LOC "$$$/LREditionDetails/Dialog/QRCode/Generator=Generator",
+            },
+
+            factory:popup_menu({
+                value = LrView.bind("qrGenerator"),
+                width_in_chars = 4,
+                items = {
+                    {
+                        title = LOC("$$$/LREditionDetails/Dialog/QRCode/GeneratorNayuki=Nayuki"),
+                        value = "nayuki"
+                    },
+                    {
+                        title = LOC("$$$/LREditionDetails/Dialog/QRCode/GeneratorZxing=Zxing"),
+                        value = "zxing"
+                    },
+                }
+            })
+
+        },
     } -- content
 
     -- Display dialog
@@ -378,6 +440,9 @@ LrFunctionContext.callWithContext("createQRCode", function(context)
         prefs.qrSubTitleProperty = props.qrSubTitleProperty
         prefs.qrMainTitlePropertyEnabled = props.qrMainTitlePropertyEnabled
         prefs.qrSubTitlePropertyEnabled = props.qrSubTitlePropertyEnabled
+        prefs.qrGenerator = props.qrGenerator
+        prefs.qrErrorCorrectionLevel = props.qrErrorCorrectionLevel
+
         logger.trace("qrMainTitle=" .. tostring(prefs.qrMainTitle))
         LrFunctionContext.postAsyncTaskWithContext("Create QR Code", TaskFunc)
 
