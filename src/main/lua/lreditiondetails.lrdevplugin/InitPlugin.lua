@@ -76,6 +76,7 @@ local function init()
         prefs.qrSetHeightSeparately=false
     end
 
+
     logger.trace("Init done.")
 end
 

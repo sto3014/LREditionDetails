@@ -37,7 +37,8 @@
 "$$$/LREditionDetails/Dialog/copyright=Copyright"
 "$$$/LREditionDetails/Dialog/artist=Artist"
 
-"$$$/LREditionDetails/Msg/NotAllQRCodesWereCreated=Only ^1 QR code(s) of ^2 was/were created. Maybe property QR code was not set for all photos."
+"$$$/LREditionDetails/Msg/ErrorQRCodesWereCreated=The creation of ^1 QR code(s) failed.^nPlease check QR code property for the following photos:"
+"$$$/LREditionDetails/Msg/ErrorQRCodes=Error creating QR codes"
 "$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevel=Error correction level"
 "$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelL=Low"
 "$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelM=Medium"

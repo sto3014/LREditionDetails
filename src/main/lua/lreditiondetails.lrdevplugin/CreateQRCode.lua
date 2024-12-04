@@ -15,6 +15,9 @@ local LrDialogs = import 'LrDialogs'
 -- Logger
 local logger = require("Logger")
 
+local notProcessedPhotos = {}
+local failedPhotos = {}
+
 local function getCode(photo)
     local catalogName = tostring(photo:getPropertyForPlugin(_PLUGIN, "catalogname"))
     if catalogName == "nil" or catalogName == "" then
@@ -71,6 +74,52 @@ local function getCode(photo)
 end
 
 --[[---------------------------------------------------------------------------
+Error dialog
+-----------------------------------------------------------------------------]]
+function eQRCreation(context)
+    logger.trace("Error")
+    local factory = LrView.osFactory()
+    local props = LrBinding.makePropertyTable(context)
+
+    props.error = LOC("$$$/LREditionDetails/Msg/ErrorQRCodesWereCreated=The creation of ^1 QR code(s) failed.^nPlease check QR code property for the following photos:", #notProcessedPhotos)
+    props.lines = #notProcessedPhotos +3
+    props.list = ""
+    for  _,photo in pairs(notProcessedPhotos) do
+        local fileName = photo:getFormattedMetadata("fileName")
+        props.list = props.list .. fileName .. "\n"
+    end
+
+
+    local content = factory:column {
+        spacing = factory:control_spacing(),
+        bind_to_object = props,
+        factory:row {
+            factory:static_text {
+                width = LrView.share("LabelWidth"),
+                title = LrView.bind("error"),
+                width_in_chars= 30,
+                height_in_lines=3
+            },
+        },
+
+        factory:row{
+            factory:edit_field {
+                alignment = "left",
+                enabled = true,
+                width_in_chars=30,
+                height_in_lines= LrView.bind("lines"),
+                value = LrView.bind("list"),
+            },
+        },
+    }
+    logger.trace("Call dialog")
+    local r = LrDialogs.presentModalDialog {
+        title = LOC("$$$/LREditionDetails/Msg/ErrorQRCodes=Error creating QR codes"),
+        contents = content
+    }
+    logger.trace("r=" .. tostring(r))
+end
+--[[---------------------------------------------------------------------------
 Async task
 -----------------------------------------------------------------------------]]
 function TaskFunc(context)
@@ -94,6 +143,8 @@ function TaskFunc(context)
     LrFileUtils.createAllDirectories(picPath)
 
     local processedPhotos = 0;
+    notProcessedPhotos = {}
+    failedPhotos = {}
     local count = 0;
     local prefs = LrPrefs.prefsForPlugin()
     for _, photo in ipairs(photos) do
@@ -173,13 +224,16 @@ function TaskFunc(context)
             if WIN_ENV then
                 cmd = 'cmd /c ' .. cmd
             end
-            logger.trace("cmd=" .. cmd)
+            logger.trace("execute " .. cmd)
             local result = LrTasks.execute(cmd);
             logger.trace("result=" .. result)
             if result == 0 then
                 count = count + 1
+            else
+                table.insert(failedPhotos, photo)
             end
-
+        else
+            table.insert(notProcessedPhotos, photo)
         end
         processedPhotos = processedPhotos + 1
         progress:setPortionComplete(processedPhotos, #photos)
@@ -187,8 +241,8 @@ function TaskFunc(context)
     --end)
     progress:done()
 
-    if ( #photos ~= count) then
-        LrDialogs.message(LOC("$$$/LREditionDetails/Msg/NotAllQRCodesWereCreated=Only ^1 qr-code(s) of ^2 have been created. Maybe property qr code was not set for all photos.", count, #photos))
+    if (#notProcessedPhotos > 0 or #failedPhotos >0) then
+        LrFunctionContext.callWithContext("notProcessedPhotos", eQRCreation)
     end
 
     if count > 0 then
