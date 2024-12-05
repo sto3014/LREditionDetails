@@ -18,61 +18,6 @@ local logger = require("Logger")
 local notProcessedPhotos = {}
 local failedPhotos = {}
 
-local function getCode(photo)
-    local catalogName = tostring(photo:getPropertyForPlugin(_PLUGIN, "catalogname"))
-    if catalogName == "nil" or catalogName == "" then
-        catalogName = "cat-name=n.a."
-    elseif string.sub(catalogName, 1, 4) == "http" then
-        return catalogName;
-    else
-        catalogName = "cat-name=" .. catalogName
-    end
-    logger.trace("cat-name=" .. catalogName)
-
-    local lotno = tostring(photo:getPropertyForPlugin(_PLUGIN, "lotno"))
-    if lotno == "nil" or lotno == "" then
-        lotno = "lot-number=n.a."
-    else
-        lotno = "lot-number=" .. lotno
-    end
-    logger.trace("lot-number=" .. lotno)
-
-    local copyright = tostring(photo:getFormattedMetadata("copyright"))
-    if copyright == "nil" or copyright == "" then
-        copyright = "copyright=n.a."
-    else
-        copyright = "copyright=" .. copyright
-    end
-    logger.trace("copyright=" .. copyright)
-
-    local catalogName = tostring(photo:getPropertyForPlugin(_PLUGIN, "catalogname"))
-    if catalogName == "nil" or catalogName == "" then
-        catalogName = "cat-name=n.a."
-    else
-        catalogName = "cat-name=" .. catalogName
-    end
-    logger.trace("cat-name=" .. catalogName)
-
-    local edition = tostring(photo:getPropertyForPlugin(_PLUGIN, "edition"))
-    if edition == "nil" or edition == "" then
-        edition = "edition=n.a."
-    else
-        edition = "edition=" .. edition
-    end
-    logger.trace("edition=" .. edition)
-
-    local mark = tostring(photo:getPropertyForPlugin(_PLUGIN, "mark"))
-    if mark == "nil" or mark == "" then
-        mark = "mark=n.a."
-    else
-        mark = "mark=" .. mark
-    end
-    logger.trace("mark=" .. mark)
-
-    return "'" .. catalogName .. " " .. lotno .. " " .. edition .. " " .. mark .. " " .. copyright .. "'"
-
-end
-
 --[[---------------------------------------------------------------------------
 Error dialog
 -----------------------------------------------------------------------------]]
@@ -270,7 +215,7 @@ function TaskFunc(context)
             end
 
             -- command
-            local cmd = '""' .. qrgen .. '"'
+            local cmd = '"' .. qrgen .. '"'
                     .. " -c " .. '"' .. qrcode .. '"'
                     .. " -o " .. '"' .. picPath .. fileName .. ".qr" .. '"'
                     .. " -w " .. tostring(prefs.qrWidth)
@@ -280,10 +225,9 @@ function TaskFunc(context)
                     .. " -g " .. tostring(prefs.qrGenerator)
                     .. mainTitleOption
                     .. subTitleOption
-					.. '"'
 
             if WIN_ENV then
-                cmd = 'cmd /c ' .. cmd
+                cmd = 'cmd /c "' .. cmd .. '"'
             end
             logger.trace("execute " .. cmd)
             local result = LrTasks.execute(cmd);
