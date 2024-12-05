@@ -77,18 +77,24 @@ end
 Error dialog
 -----------------------------------------------------------------------------]]
 function eQRCreation(context)
-    logger.trace("Error")
     local factory = LrView.osFactory()
     local props = LrBinding.makePropertyTable(context)
 
-    props.error = LOC("$$$/LREditionDetails/Msg/ErrorQRCodesWereCreated=The creation of ^1 QR code(s) failed.^nPlease check QR code property for the following photos:", #notProcessedPhotos)
-    props.lines = #notProcessedPhotos +3
-    props.list = ""
+    props.error = LOC("$$$/LREditionDetails/Msg/ErrorQRCode=The creation of ^1 QR code(s) failed.", #notProcessedPhotos + #failedPhotos)
+    props.errorNotProcessed = LOC("$$$/LREditionDetails/Msg/ErrorNotProcessed=^1 photo(s) were/was not processed because the QR code property was missing:", #notProcessedPhotos)
+    props.errorFailed = LOC("$$$/LREditionDetails/Msg/ErrorFailed=For ^1 photo(s) the encoding of the QR code failed. Please check QR code and settings of:", #failedPhotos)
+    props.linesNotProcessed = #notProcessedPhotos +3
+    props.linesFailed = #failedPhotos +3
+    props.listNotProcessed = ""
+    props.listFailed = ""
     for  _,photo in pairs(notProcessedPhotos) do
         local fileName = photo:getFormattedMetadata("fileName")
-        props.list = props.list .. fileName .. "\n"
+        props.listNotProcessed = props.listNotProcessed .. fileName .. "\n"
     end
-
+    for  _,photo in pairs(failedPhotos) do
+        local fileName = photo:getFormattedMetadata("fileName")
+        props.listFailed = props.listFailed .. fileName .. "\n"
+    end
 
     local content = factory:column {
         spacing = factory:control_spacing(),
@@ -97,8 +103,23 @@ function eQRCreation(context)
             factory:static_text {
                 width = LrView.share("LabelWidth"),
                 title = LrView.bind("error"),
-                width_in_chars= 30,
-                height_in_lines=3
+                width_in_chars= 80,
+                height_in_lines=1,
+                alignment = "center",
+                font = "<system/bold>",
+            },
+
+        },
+        factory:separator {
+            fill_horizontal = 1,
+        },
+        factory:row {
+            factory:static_text {
+                width = LrView.share("LabelWidth"),
+                title = LrView.bind("errorNotProcessed"),
+                width_in_chars= 80,
+                height_in_lines=1,
+                font = "<system/bold>",
             },
         },
 
@@ -106,18 +127,96 @@ function eQRCreation(context)
             factory:edit_field {
                 alignment = "left",
                 enabled = true,
-                width_in_chars=30,
-                height_in_lines= LrView.bind("lines"),
-                value = LrView.bind("list"),
+                width_in_chars=80,
+                height_in_lines= LrView.bind("linesNotProcessed"),
+                value = LrView.bind("listNotProcessed"),
+            },
+        },
+        factory:separator {
+            fill_horizontal = 1,
+        },
+        factory:row {
+            factory:static_text {
+                width = LrView.share("LabelWidth"),
+                title = LrView.bind("errorFailed"),
+                width_in_chars= 80,
+                height_in_lines=1,
+                font = "<system/bold>",
+            },
+        },
+
+        factory:row{
+            factory:edit_field {
+                alignment = "left",
+                enabled = true,
+                width_in_chars=80,
+                height_in_lines= LrView.bind("linesFailed"),
+                value = LrView.bind("listFailed"),
             },
         },
     }
-    logger.trace("Call dialog")
+
     local r = LrDialogs.presentModalDialog {
         title = LOC("$$$/LREditionDetails/Msg/ErrorQRCodes=Error creating QR codes"),
         contents = content
     }
     logger.trace("r=" .. tostring(r))
+end
+--[[---------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------]]
+function getSubTitle(prefs, photo)
+    local subTitle = ""
+    if (prefs.qrSubTitle) then
+        logger.trace("qrSubTitleProperty=" .. tostring(prefs.qrSubTitleProperty))
+
+        local property
+        if (prefs.qrSubTitleProperty == "catalogname" or prefs.qrSubTitleProperty == "lotno" or prefs.qrSubTitleProperty == "edition" or prefs.qrSubTitleProperty == "qrcode") then
+            property = photo:getPropertyForPlugin(_PLUGIN, prefs.qrSubTitleProperty)
+            if (prefs.qrSubTitleProperty == "edition") then
+                local signature = photo:getPropertyForPlugin(_PLUGIN, "mark")
+                if (signature ~= nil and signature ~= "") then
+                    property = property .. " " .. signature
+                end
+            end
+        else
+            property = photo:getFormattedMetadata(prefs.qrSubTitleProperty)
+        end
+        logger.trace("property=" .. tostring(property))
+
+        subTitle = tostring(property)
+
+    end
+    logger.trace("subTitle=" .. subTitle)
+    return subTitle
+end
+--[[---------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------]]
+function getMainTitle(prefs, photo)
+    local mainTitle = ""
+    if (prefs.qrMainTitle) then
+        logger.trace("qrMainTitleProperty=" .. tostring(prefs.qrMainTitleProperty))
+        local property
+        if (prefs.qrMainTitleProperty == "catalogname" or prefs.qrMainTitleProperty == "lotno" or prefs.qrMainTitleProperty == "edition" or prefs.qrMainTitleProperty == "qrcode") then
+            property = photo:getPropertyForPlugin(_PLUGIN, prefs.qrMainTitleProperty)
+            logger.trace("property=" .. tostring(property))
+            if (prefs.qrMainTitleProperty == "edition") then
+                local signature = photo:getPropertyForPlugin(_PLUGIN, "mark")
+                if (signature ~= nil and signature ~= "") then
+                    property = property .. " " .. signature
+                end
+            end
+        else
+            property = photo:getFormattedMetadata(prefs.qrMainTitleProperty)
+        end
+        logger.trace("property=" .. tostring(property))
+
+        mainTitle = tostring(property)
+
+    end
+    logger.trace("mainTitle=" .. mainTitle)
+    return mainTitle
 end
 --[[---------------------------------------------------------------------------
 Async task
@@ -149,67 +248,28 @@ function TaskFunc(context)
     local prefs = LrPrefs.prefsForPlugin()
     for _, photo in ipairs(photos) do
         local qrcode = tostring(photo:getPropertyForPlugin(_PLUGIN, "qrcode"))
+        local  fileName = photo:getFormattedMetadata("fileName")
+        logger.trace("fileName=" .. fileName)
         if qrcode ~= "nil" and qrcode ~= "" then
-            local fileName = photo:getFormattedMetadata("fileName")
-            logger.trace("fileName=" .. fileName)
-
             -- main title
-
-            local mainTitle = ""
-            if (prefs.qrMainTitle) then
-                logger.trace("qrMainTitleProperty=" .. tostring(prefs.qrMainTitleProperty))
-                local property
-                if (prefs.qrMainTitleProperty == "catalogname" or prefs.qrMainTitleProperty == "lotno" or prefs.qrMainTitleProperty == "edition" or prefs.qrMainTitleProperty == "qrcode") then
-                    property = photo:getPropertyForPlugin(_PLUGIN, prefs.qrMainTitleProperty)
-                    logger.trace("property=" .. tostring(property))
-                    if (prefs.qrMainTitleProperty == "edition") then
-                        local signature = photo:getPropertyForPlugin(_PLUGIN, "mark")
-                        if (signature ~= nil and signature ~= "") then
-                            property = property .. " " .. signature
-                        end
-                    end
-                else
-                    property = photo:getFormattedMetadata(prefs.qrMainTitleProperty)
-                end
-                logger.trace("property=" .. tostring(property))
-
-                mainTitle = tostring(property)
-                if mainTitle ~= "" then
-                    mainTitle = " -m '" .. mainTitle .. "'"
-                end
+            local mainTitle = getMainTitle(prefs, photo)
+            local mainTitleOption
+            if mainTitle ~= "" then
+                mainTitleOption = " -m '" .. mainTitle .. "'"
+            else
+                mainTitleOption = ""
             end
-            logger.trace("mainTitle=" .. mainTitle)
-
 
             -- sub title
-
-            local subTitle = ""
-            if (prefs.qrSubTitle) then
-                logger.trace("qrSubTitleProperty=" .. tostring(prefs.qrSubTitleProperty))
-
-                local property
-                if (prefs.qrSubTitleProperty == "catalogname" or prefs.qrSubTitleProperty == "lotno" or prefs.qrSubTitleProperty == "edition" or prefs.qrSubTitleProperty == "qrcode") then
-                    property = photo:getPropertyForPlugin(_PLUGIN, prefs.qrSubTitleProperty)
-                    if (prefs.qrSubTitleProperty == "edition") then
-                        local signature = photo:getPropertyForPlugin(_PLUGIN, "mark")
-                        if (signature ~= nil and signature ~= "") then
-                            property = property .. " " .. signature
-                        end
-                    end
-                else
-                    property = photo:getFormattedMetadata(prefs.qrSubTitleProperty)
-                end
-                logger.trace("property=" .. tostring(property))
-
-                subTitle = tostring(property)
-                if subTitle ~= "" then
-                    subTitle = " -s " .. "'" .. subTitle .. "'"
-                end
+            local subTitle = getSubTitle(prefs,photo)
+            local subTitleOption
+            if subTitle ~= "" then
+                subTitleOption = " -s " .. "'" .. subTitle .. "'"
+            else
+                subTitleOption=""
             end
-            logger.trace("subTitle=" .. subTitle)
 
             -- command
-
             local cmd = "'" .. qrgen .. "'"
                     .. " -c " .. "'" .. qrcode .. "'"
                     .. " -o " .. "'" .. picPath .. fileName .. ".qr" .. "'"
@@ -218,8 +278,8 @@ function TaskFunc(context)
                     .. " -t " .. tostring(prefs.qrTransparent)
                     .. " -e " .. tostring(prefs.qrErrorCorrectionLevel)
                     .. " -g " .. tostring(prefs.qrGenerator)
-                    .. mainTitle
-                    .. subTitle
+                    .. mainTitleOption
+                    .. subTitleOption
 
             if WIN_ENV then
                 cmd = 'cmd /c ' .. cmd
@@ -230,9 +290,11 @@ function TaskFunc(context)
             if result == 0 then
                 count = count + 1
             else
+                logger.trace("Error: Encoding of QR code " .. qrcode .. " failed for photo " .. fileName)
                 table.insert(failedPhotos, photo)
             end
         else
+            logger.trace("Error: QR-Code is missing for photo " .. fileName)
             table.insert(notProcessedPhotos, photo)
         end
         processedPhotos = processedPhotos + 1

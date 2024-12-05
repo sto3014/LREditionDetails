@@ -34,7 +34,10 @@
 "$$$/LREditionDetails/Dialog/copyright=Copyright"
 "$$$/LREditionDetails/Dialog/artist=Kunstner"
 
-"$$$/LREditionDetails/Msg/NotAllQRCodesWereCreated=Bare ^1 QR-kode(r) av ^2 ble opprettet. Kanskje QR-koden for egenskapen ikke ble angitt for alle bildene."
+"$$$/LREditionDetails/Msg/ErrorQRCode=Opprettelsen av ^1 QR-kode(r) mislyktes."
+"$$$/LREditionDetails/Msg/ErrorNotProcessed=^1 bilde(r) ble ikke behandlet fordi QR-kodeegenskapen manglet:"
+"$$$/LREditionDetails/Msg/ErrorFailed=For ^1 bilde(r) mislyktes kodingen av QR-koden. Vennligst sjekk QR-koden og innstillingene til:"
+
 "$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevel=Feilkorreksjonsnivå"
 "$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelL=Lav"
 "$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelM=Medium"

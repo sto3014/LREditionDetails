@@ -34,7 +34,10 @@
 "$$$/LREditionDetails/Dialog/copyright=Copyright"
 "$$$/LREditionDetails/Dialog/artist=Artista"
 
-"$$$/LREditionDetails/Msg/NotAllQRCodesWereCreated=Sólo se ha creado ^1 código(s) QR de ^2. Tal vez no se estableció el código QR de propiedad para todas las fotos."
+"$$$/LREditionDetails/Msg/ErrorQRCode=Ha fallado la creación de ^1 código(s) QR."
+"$$$/LREditionDetails/Msg/ErrorNotProcessed=^1 foto(s) no fue(ron) procesada(s) porque faltaba la propiedad de código QR:"
+"$$$/LREditionDetails/Msg/ErrorFailed=Para ^1 foto(s) falló la codificación del código QR. Por favor, compruebe el código QR y la configuración de:"
+
 "$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevel=Nivel de corrección de errores"
 "$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelL=Bajo"
 "$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelM=Medio"

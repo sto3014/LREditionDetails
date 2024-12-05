@@ -34,7 +34,10 @@
 "$$$/LREditionDetails/Dialog/copyright=Copyright"
 "$$$/LREditionDetails/Dialog/artist=Konstnär"
 
-"$$$/LREditionDetails/Msg/NotAllQRCodesWereCreated=Endast ^1 QR-kod(er) av ^2 skapades. Kanske var QR-koden för egendom inte inställd för alla foton."
+"$$$/LREditionDetails/Msg/ErrorQRCode=Skapandet av ^1 QR-kod(er) misslyckades."
+"$$$/LREditionDetails/Msg/ErrorNotProcessed=^1 foto(s) bearbetades inte eftersom QR-kodsegenskapen saknades:"
+"$$$/LREditionDetails/Msg/ErrorFailed=För ^1 foto(s) misslyckades kodningen av QR-koden. Vänligen kontrollera QR-koden och inställningarna för:"
+
 "$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevel=Felkorrigeringsnivå"
 "$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelL=Låg"
 "$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelM=Medium"
