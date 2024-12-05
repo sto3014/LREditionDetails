@@ -9,6 +9,14 @@ This plug-in provides metadata for print editions.
 
 * Set source tag by the photo ID
 * Provide tags for print editions
+* Create QR Codes
+
+## Prerequisites
+
+* Java 21 or newer must be installed.
+* java.exe must be in your PATH
+
+---
 
 ## Installation
 
