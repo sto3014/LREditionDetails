@@ -255,7 +255,7 @@ function TaskFunc(context)
             local mainTitle = getMainTitle(prefs, photo)
             local mainTitleOption
             if mainTitle ~= "" then
-                mainTitleOption = " -m '" .. mainTitle .. "'"
+                mainTitleOption = " -m " .. '"' .. mainTitle .. '"'
             else
                 mainTitleOption = ""
             end
@@ -264,15 +264,15 @@ function TaskFunc(context)
             local subTitle = getSubTitle(prefs,photo)
             local subTitleOption
             if subTitle ~= "" then
-                subTitleOption = " -s " .. "'" .. subTitle .. "'"
+                subTitleOption = " -s " .. '"' .. subTitle .. '"'
             else
                 subTitleOption=""
             end
 
             -- command
-            local cmd = "'" .. qrgen .. "'"
-                    .. " -c " .. "'" .. qrcode .. "'"
-                    .. " -o " .. "'" .. picPath .. fileName .. ".qr" .. "'"
+            local cmd = '""' .. qrgen .. '"'
+                    .. " -c " .. '"' .. qrcode .. '"'
+                    .. " -o " .. '"' .. picPath .. fileName .. ".qr" .. '"'
                     .. " -w " .. tostring(prefs.qrWidth)
                     .. " -h " .. tostring(prefs.qrHeight)
                     .. " -t " .. tostring(prefs.qrTransparent)
@@ -280,6 +280,7 @@ function TaskFunc(context)
                     .. " -g " .. tostring(prefs.qrGenerator)
                     .. mainTitleOption
                     .. subTitleOption
+					.. '"'
 
             if WIN_ENV then
                 cmd = 'cmd /c ' .. cmd
