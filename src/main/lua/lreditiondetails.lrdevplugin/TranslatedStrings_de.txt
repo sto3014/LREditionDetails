@@ -36,7 +36,7 @@
 
 "$$$/LREditionDetails/Msg/ErrorQRCode=Die Erstellung von ^1 QR-Code(s) ist fehlgeschlagen."
 "$$$/LREditionDetails/Msg/ErrorNotProcessed=^1 Foto(s) wurde(n) nicht verarbeitet, weil die QR-Code-Eigenschaft fehlte:"
-"$$$/LREditionDetails/Msg/ErrorFailed=Bei ^1 Foto(s) ist die Kodierung des QR-Codes fehlgeschlagen. Bitte überprüfen Sie den QR-Code und die Einstellungen von:"
+"$$$/LREditionDetails/Msg/ErrorFailed=Für ^1 Foto(s) ist die Kodierung des QR-Codes fehlgeschlagen. Vielleicht ist java 21 nicht installiert oder java.exe befindet sich nicht in Ihrem Suchpfad:"
 
 "$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevel=Niveau der Fehlerkorrektur"
 "$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelL=Niedrig"

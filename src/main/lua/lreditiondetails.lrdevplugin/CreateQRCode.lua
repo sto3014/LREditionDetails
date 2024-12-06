@@ -27,7 +27,7 @@ function eQRCreation(context)
 
     props.error = LOC("$$$/LREditionDetails/Msg/ErrorQRCode=The creation of ^1 QR code(s) failed.", #notProcessedPhotos + #failedPhotos)
     props.errorNotProcessed = LOC("$$$/LREditionDetails/Msg/ErrorNotProcessed=^1 photo(s) were/was not processed because the QR code property was missing:", #notProcessedPhotos)
-    props.errorFailed = LOC("$$$/LREditionDetails/Msg/ErrorFailed=For ^1 photo(s) the encoding of the QR code failed. Please check QR code and settings of:", #failedPhotos)
+    props.errorFailed = LOC("$$$/LREditionDetails/Msg/ErrorFailed=For ^1 photo(s) the encoding of the QR code failed. Maybe java 21 is not installed or java.exe is not in your PATH:", #failedPhotos)
     props.linesNotProcessed = #notProcessedPhotos +3
     props.linesFailed = #failedPhotos +3
     props.listNotProcessed = ""
@@ -48,7 +48,7 @@ function eQRCreation(context)
             factory:static_text {
                 width = LrView.share("LabelWidth"),
                 title = LrView.bind("error"),
-                width_in_chars= 80,
+                width_in_chars= 90,
                 height_in_lines=1,
                 alignment = "center",
                 font = "<system/bold>",
@@ -62,7 +62,7 @@ function eQRCreation(context)
             factory:static_text {
                 width = LrView.share("LabelWidth"),
                 title = LrView.bind("errorNotProcessed"),
-                width_in_chars= 80,
+                width_in_chars= 90,
                 height_in_lines=1,
                 font = "<system/bold>",
             },
@@ -72,7 +72,7 @@ function eQRCreation(context)
             factory:edit_field {
                 alignment = "left",
                 enabled = true,
-                width_in_chars=80,
+                width_in_chars=90,
                 height_in_lines= LrView.bind("linesNotProcessed"),
                 value = LrView.bind("listNotProcessed"),
             },
@@ -84,7 +84,7 @@ function eQRCreation(context)
             factory:static_text {
                 width = LrView.share("LabelWidth"),
                 title = LrView.bind("errorFailed"),
-                width_in_chars= 80,
+                width_in_chars= 90,
                 height_in_lines=1,
                 font = "<system/bold>",
             },
@@ -94,7 +94,7 @@ function eQRCreation(context)
             factory:edit_field {
                 alignment = "left",
                 enabled = true,
-                width_in_chars=80,
+                width_in_chars=90,
                 height_in_lines= LrView.bind("linesFailed"),
                 value = LrView.bind("listFailed"),
             },
@@ -106,6 +106,7 @@ function eQRCreation(context)
         contents = content
     }
     logger.trace("r=" .. tostring(r))
+    return r
 end
 --[[---------------------------------------------------------------------------
 
@@ -249,7 +250,9 @@ function TaskFunc(context)
     progress:done()
 
     if (#notProcessedPhotos > 0 or #failedPhotos >0) then
-        LrFunctionContext.callWithContext("notProcessedPhotos", eQRCreation)
+        if (LrFunctionContext.callWithContext("notProcessedPhotos", eQRCreation) == "cancel") then
+            return
+        end
     end
 
     if count > 0 then

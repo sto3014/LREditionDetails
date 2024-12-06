@@ -39,7 +39,7 @@
 
 "$$$/LREditionDetails/Msg/ErrorQRCode=The creation of ^1 QR code(s) failed."
 "$$$/LREditionDetails/Msg/ErrorNotProcessed=^1 photo(s) were/was not processed because the QR code property was missing:"
-"$$$/LREditionDetails/Msg/ErrorFailed=For ^1 photo(s) the encoding of the QR code failed. Please check QR code and settings of:"
+"$$$/LREditionDetails/Msg/ErrorFailed=For ^1 photo(s) the encoding of the QR code failed. Maybe java 21 is not installed or java.exe is not in your search path:"
 
 "$$$/LREditionDetails/Msg/ErrorQRCodes=Error creating QR codes"
 "$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevel=Error correction level"
