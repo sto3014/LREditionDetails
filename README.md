@@ -27,7 +27,7 @@ This plug-in provides metadata for print editions.
 2. Extract the archive in the download folder.
 3. Install plug-in
    1. On Windows  
-      In Explore goto `Downloads\LREditionDetails-1.1.0.0` and double click `install.bat`.
+      In Explore goto `Downloads\LREditionDetails-1.1.0.0` and double click `install.cmd`.
    2. On macOS  
       Open a terminal window, change to `Downloads/LREditionDetails-1.1.0.0` and execute `install.sh`:
        ```

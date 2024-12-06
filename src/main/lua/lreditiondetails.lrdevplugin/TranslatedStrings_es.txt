@@ -36,7 +36,7 @@
 
 "$$$/LREditionDetails/Msg/ErrorQRCode=Ha fallado la creación de ^1 código(s) QR."
 "$$$/LREditionDetails/Msg/ErrorNotProcessed=^1 foto(s) no fue(ron) procesada(s) porque faltaba la propiedad de código QR:"
-"$$$/LREditionDetails/Msg/ErrorFailed=Para ^1 foto(s) falló la codificación del código QR. Tal vez java 21 no está instalado o java.exe no está en su ruta de búsqueda:"
+"$$$/LREditionDetails/Msg/ErrorFailed=Para ^1 foto(s) falló la codificación del código QR. Tal vez java 21 no está instalado o java no está en su ruta de búsqueda:"
 
 
 "$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevel=Nivel de corrección de errores"

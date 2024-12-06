@@ -36,7 +36,7 @@
 
 "$$$/LREditionDetails/Msg/ErrorQRCode=Opprettelsen av ^1 QR-kode(r) mislyktes."
 "$$$/LREditionDetails/Msg/ErrorNotProcessed=^1 bilde(r) ble ikke behandlet fordi QR-kodeegenskapen manglet:"
-"$$$/LREditionDetails/Msg/ErrorFailed=For ^1 bilde(r) mislyktes kodingen av QR-koden. Kanskje java 21 ikke er installert eller java.exe ikke er i søkebanen din:"
+"$$$/LREditionDetails/Msg/ErrorFailed=For ^1 bilde(r) mislyktes kodingen av QR-koden. Kanskje java 21 ikke er installert eller java ikke er i søkebanen din:"
 
 "$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevel=Feilkorreksjonsnivå"
 "$$$/LREditionDetails/Dialog/QRCode/ErrorCorrectionLevelL=Lav"
