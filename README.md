@@ -14,7 +14,7 @@ This plug-in provides metadata for print editions.
 ## Prerequisites
 
 * Java 21 or newer must be installed.
-* java.exe must be in your PATH
+* java executable must be in your PATH
 
 ---
 
